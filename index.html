@@ -1,0 +1,895 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pradeep Kumar Raghupathy - Resume</title>
+    <style>
+      /* Import Quicksand Font - Must be top of style */
+      @import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap");
+
+      /* --- DESIGN SYSTEM --- */
+      :root {
+        --bg-color: #fafafa;
+        --text-primary: #222222;
+        --text-secondary: #555555;
+        --accent-color: #ff4f00; /* Spikey Tech Official Orange */
+        --border-color: #eeeeee;
+        --card-bg: #ffffff;
+      }
+
+      body {
+        font-family: "Quicksand", -apple-system, BlinkMacSystemFont, "Segoe UI",
+          Roboto, Helvetica, Arial, sans-serif;
+        background-color: var(--bg-color);
+        color: var(--text-primary);
+        line-height: 1.6;
+        margin: 0;
+        padding: 40px 20px;
+        display: flex;
+        justify-content: center;
+      }
+
+      .resume-container {
+        max-width: 800px;
+        width: 100%;
+        background: var(--card-bg);
+        padding: 60px;
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.03);
+        border-radius: 12px;
+      }
+
+      /* Header */
+      header {
+        border-bottom: 2px solid var(--border-color);
+        padding-bottom: 30px;
+        margin-bottom: 40px;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+      }
+
+      .header-content h1 {
+        font-weight: 700;
+        font-size: 32px;
+        margin: 0 0 8px 0;
+        letter-spacing: -0.5px;
+      }
+
+      .header-content h2 {
+        font-size: 14px;
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+        font-weight: 600;
+        color: var(--accent-color);
+        margin: 0;
+      }
+
+      .company-branding {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin-top: 15px;
+        justify-content: flex-end;
+      }
+
+      .company-logo-large {
+        height: 40px;
+        width: auto;
+        /* Shadow and radius removed as they are baked into the image */
+      }
+
+      .company-name {
+        font-size: 22px;
+        font-weight: 700;
+        color: var(--accent-color);
+        letter-spacing: -0.5px;
+      }
+
+      .header-profile-image {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin-right: 30px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .contact-info {
+        text-align: right;
+        font-size: 13px;
+        font-weight: 600;
+        color: var(--text-secondary);
+      }
+
+      .contact-info a {
+        color: var(--text-primary);
+        text-decoration: none;
+        display: block;
+        margin-bottom: 4px;
+        transition: color 0.2s;
+      }
+
+      .contact-info a:hover {
+        color: var(--accent-color);
+      }
+
+      .header-right {
+        text-align: right;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+      }
+
+      /* Sections */
+      section {
+        margin-bottom: 45px;
+      }
+
+      h3 {
+        font-weight: 700;
+        font-size: 20px;
+        border-left: 4px solid var(--accent-color);
+        padding-left: 15px;
+        margin-bottom: 25px;
+        color: var(--text-primary);
+      }
+
+      /* Narrative Text */
+      .narrative {
+        font-size: 15px;
+        color: var(--text-secondary);
+        margin-bottom: 30px;
+        font-weight: 500;
+      }
+
+      /* Experience Items */
+      .job-item {
+        margin-bottom: 35px;
+      }
+
+      .job-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        margin-bottom: 8px;
+      }
+
+      .job-title {
+        font-weight: 700;
+        font-size: 17px;
+      }
+
+      .job-company {
+        font-weight: 600;
+        color: var(--text-secondary);
+      }
+
+      .job-date {
+        font-size: 13px;
+        color: #999;
+        font-weight: 600;
+      }
+
+      .job-description {
+        font-size: 14px;
+        color: var(--text-secondary);
+        font-weight: 500;
+      }
+
+      .job-description ul {
+        padding-left: 18px;
+        margin-top: 8px;
+      }
+
+      .job-description li {
+        margin-bottom: 6px;
+        padding-left: 5px;
+      }
+
+      /* Project Highlight Box */
+      .highlight-project {
+        background-color: #fff8f5; /* Very subtle tint of orange */
+        border-radius: 8px;
+        border: 1px solid rgba(255, 79, 0, 0.1);
+        padding: 25px;
+        margin: 25px 0;
+        position: relative;
+        padding: 25px;
+      }
+
+      /* .highlight-logo removed as it is no longer used in the project card */
+
+      .highlight-title {
+        font-weight: 700;
+        font-size: 18px;
+        margin-bottom: 5px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        color: var(--accent-color);
+      }
+
+      .tag {
+        font-weight: 700;
+        font-size: 10px;
+        background: var(--accent-color);
+        color: white;
+        padding: 3px 10px;
+        border-radius: 100px;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+      }
+
+      .skills-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: 20px;
+      }
+
+      .skill-category {
+        background: #f9f9f9;
+        padding: 15px;
+        border-radius: 8px;
+      }
+
+      .skill-category strong {
+        display: block;
+        margin-bottom: 8px;
+        color: var(--text-primary);
+        font-size: 14px;
+        font-weight: 700;
+      }
+
+      .skill-category span {
+        font-size: 13px;
+        color: var(--text-secondary);
+        font-weight: 500;
+        line-height: 1.5;
+        display: block;
+      }
+
+      /* Links */
+      a.project-link {
+        color: var(--accent-color);
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 13px;
+      }
+
+      a.project-link:hover {
+        text-decoration: underline;
+      }
+
+      /* Footer */
+      .footer-quote {
+        margin-top: 60px;
+        text-align: center;
+        font-weight: 500;
+        font-style: italic;
+        color: #aaaaaa;
+        font-size: 14px;
+      }
+
+      /* Download PDF Button */
+      .download-pdf-btn {
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        background: var(--accent-color);
+        color: white;
+        padding: 15px 25px;
+        border-radius: 50px;
+        font-weight: 600;
+        font-size: 14px;
+        text-decoration: none;
+        box-shadow: 0 4px 15px rgba(255, 79, 0, 0.3);
+        transition: all 0.3s ease;
+        cursor: pointer;
+        border: none;
+        font-family: "Quicksand", sans-serif;
+        z-index: 1000;
+      }
+
+      .download-pdf-btn:hover {
+        background: #ff6a1f;
+        box-shadow: 0 6px 20px rgba(255, 79, 0, 0.4);
+        transform: translateY(-2px);
+      }
+
+      /* Mobile Responsive Design */
+      @media (max-width: 768px) {
+        body {
+          padding: 20px 15px;
+        }
+
+        .resume-container {
+          padding: 30px 25px;
+          box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+        }
+
+        header {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+
+        .header-right {
+          align-items: flex-start;
+          text-align: left;
+          width: 100%;
+          margin-top: 20px;
+        }
+
+        .contact-info {
+          text-align: left;
+        }
+
+        .company-branding {
+          justify-content: flex-start;
+          margin-top: 15px;
+        }
+
+        .header-profile-image {
+          width: 80px;
+          height: 80px;
+          margin-right: 20px;
+        }
+
+        .header-content h1 {
+          font-size: 26px;
+        }
+
+        .header-content h2 {
+          font-size: 12px;
+        }
+
+        .company-name {
+          font-size: 18px;
+        }
+
+        .company-logo-large {
+          height: 32px;
+        }
+
+        h3 {
+          font-size: 18px;
+        }
+
+        .narrative {
+          font-size: 14px;
+        }
+
+        .job-title {
+          font-size: 16px;
+        }
+
+        .job-header {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+
+        .job-date {
+          margin-top: 5px;
+        }
+
+        .skills-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .download-pdf-btn {
+          bottom: 20px;
+          right: 20px;
+          padding: 12px 20px;
+          font-size: 13px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .resume-container {
+          padding: 25px 20px;
+        }
+
+        .header-content h1 {
+          font-size: 22px;
+        }
+
+        .header-profile-image {
+          width: 70px;
+          height: 70px;
+        }
+
+        .download-pdf-btn {
+          bottom: 15px;
+          right: 15px;
+          padding: 10px 18px;
+          font-size: 12px;
+        }
+      }
+
+      /* Print Stylesheet for PDF Generation */
+      @media print {
+        body {
+          background-color: white;
+          padding: 0;
+        }
+
+        .resume-container {
+          max-width: 100%;
+          box-shadow: none;
+          padding: 40px;
+        }
+
+        .download-pdf-btn {
+          display: none;
+        }
+
+        a {
+          color: var(--text-primary);
+          text-decoration: none;
+        }
+
+        .contact-info a::after {
+          content: "";
+        }
+
+        /* Ensure proper page breaks */
+        h3 {
+          page-break-after: avoid;
+        }
+
+        .job-item {
+          page-break-inside: avoid;
+        }
+
+        section {
+          page-break-inside: avoid;
+        }
+
+        /* Better spacing for print */
+        .footer-quote {
+          margin-top: 40px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="resume-container">
+      <!-- HEADER -->
+      <header>
+        <div style="display: flex; align-items: center">
+          <img
+            src="Profile Image.jpg"
+            alt="Pradeep Kumar Raghupathy"
+            class="header-profile-image"
+          />
+          <div class="header-content">
+            <h1>Pradeep Kumar Raghupathy</h1>
+            <h2>Founder & Lead Architect</h2>
+          </div>
+        </div>
+        <div class="header-right">
+          <div class="contact-info">
+            <a href="https://www.spikey.tech" target="_blank"
+              >www.spikey.tech</a
+            >
+            <a
+              href="https://www.linkedin.com/in/pradeep-kumar-raghupathy-8125181b4"
+              target="_blank"
+              >LinkedIn Profile</a
+            >
+            <a href="#">Wilmington, DE (Remote)</a>
+            <a href="mailto:pradeep@everythingjournal.app"
+              >pradeep@everythingjournal.app</a
+            >
+          </div>
+          <div class="company-branding">
+            <a
+              href="https://www.linkedin.com/company/spikeytech/"
+              target="_blank"
+              style="text-decoration: none"
+            >
+              <span class="company-name">Spikey Tech Inc.</span>
+            </a>
+            <img
+              src="Spikey Tech Logo - Rounded Corners - Shadow Dark 1x.png"
+              alt="Spikey Tech Inc."
+              class="company-logo-large"
+            />
+          </div>
+        </div>
+      </header>
+
+      <!-- PROFESSIONAL SUMMARY -->
+      <section>
+        <h3>Professional Summary</h3>
+        <p class="narrative">
+          Self-taught software developer with 10+ years of experience building
+          production-ready mobile and web applications. As Founder of
+          <strong>Spikey Tech Inc.</strong>, I specialize in transforming ideas
+          into scalable solutions across iOS (Swift/SwiftUI), Flutter, and AI
+          integration (GenKit, Vertex AI). My journey began in 2014 with my
+          first App Store release, which opened doors to a career spanning
+          freelance development, contract work, and founding my own company.
+          <br /><br />
+          I focus on measurable outcomes: implementing gamification strategies
+          for user retention, creating profitable and scalable business models,
+          and building well-documented systems that drive growth. I help
+          founders and businesses understand their markets and develop solutions
+          that deliver maximum exposure, engagement, and sustainable revenue.
+        </p>
+      </section>
+
+      <!-- BACKGROUND & JOURNEY -->
+      <section>
+        <h3>Background & Journey</h3>
+        <p class="narrative">
+          My path into software development began through self-directed learning
+          in 2013. Initially attending University at Buffalo (SUNY) for
+          Mechanical Engineering, I discovered my passion for programming and
+          chose to pursue it independently. I immersed myself in iOS
+          development, learning Swift, programming principles, Core Data, and
+          cloud synchronization technologies. <br /><br />
+          In 2014, I built and released my first application,
+          <strong>Everything Journal</strong>, to the App Store. Originally
+          created as a personal productivity tool using iOS Core Data and iCloud
+          sync, this project became the foundation of my professional career. It
+          opened doors to freelance opportunities, contract work with
+          development agencies, and eventually founding
+          <strong>Spikey Tech Inc.</strong> Over a decade later, I'm rebuilding
+          Everything Journal with modern technologies as a flagship product for
+          2025.
+        </p>
+      </section>
+
+      <!-- EXPERIENCE -->
+      <section>
+        <h3>Spikey Tech Inc. — Founder & Lead Architect (2022 – Present)</h3>
+
+        <!-- EVERYTHING JOURNAL (FEATURED) -->
+        <div class="highlight-project">
+          <div class="highlight-title">
+            Everything Journal <span class="tag">Stealth 2025</span>
+          </div>
+          <div class="job-header">
+            <span class="job-company">Product of Spikey Tech Inc.</span>
+            <span class="job-date">iOS Native | GenKit | On-Device AI</span>
+          </div>
+          <div class="job-description">
+            <a
+              href="https://everythingjournal.app"
+              class="project-link"
+              target="_blank"
+              >🌐 Website</a
+            ><br />
+            A privacy-first journaling platform designed to capture thoughts and
+            organize information using on-device AI intelligence.
+            <ul>
+              <li>
+                <strong>Technical Architecture:</strong> Built entirely in
+                <strong>Native Swift/SwiftUI</strong> optimized for 120Hz
+                displays with zero-latency interactions and instant
+                responsiveness.
+              </li>
+              <li>
+                <strong>AI Implementation:</strong> Integrated
+                <strong>Google GenKit</strong> and local LLMs for real-time
+                categorization, summarization, and semantic connections between
+                entries while maintaining complete data privacy.
+              </li>
+              <li>
+                <strong>User Experience:</strong> Designed minimalist UI with
+                haptic feedback and intuitive gestures, focusing on reducing
+                cognitive load and enabling seamless capture-to-organization
+                workflows.
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="job-item">
+          <div class="job-header">
+            <span class="job-title"
+              >SteerBig - Sadhana & Habit Tracker (Client Project)</span
+            >
+            <span class="job-date">2024 – 2025</span>
+          </div>
+          <div class="job-description">
+            <a href="https://steerbig.com" class="project-link" target="_blank"
+              >🌐 Website</a
+            >
+            |
+            <a
+              href="https://apps.apple.com/us/app/steerbig-sadhana-habit/id6502844799"
+              class="project-link"
+              target="_blank"
+              >📱 App Store</a
+            >
+            |
+            <a
+              href="https://play.google.com/store/apps/details?id=com.steerbig.app"
+              class="project-link"
+              target="_blank"
+              >🤖 Play Store</a
+            ><br />
+            Developed a comprehensive habit tracking and spiritual practice
+            management app from concept to App Store launch.
+            <ul>
+              <li>
+                <strong>Tech Stack:</strong> Flutter, Firebase, Rive Animations
+                for smooth micro-interactions.
+              </li>
+              <li>
+                <strong>Delivered Value:</strong> Implemented gamification
+                mechanics (48-day Mandala Game) with positive reinforcement
+                systems to drive user engagement and retention. Built complex
+                data visualization dashboards and subscription monetization with
+                in-app purchases.
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="job-item">
+          <div class="job-header">
+            <span class="job-title">ProCarp</span>
+            <span class="job-date">2022 – 2023</span>
+          </div>
+          <div class="job-description">
+            <a
+              href="https://procarpapp.com"
+              class="project-link"
+              target="_blank"
+              >🌐 Website</a
+            >
+            |
+            <a
+              href="https://apps.apple.com/us/app/pro-carp/id1587047507"
+              class="project-link"
+              target="_blank"
+              >📱 App Store</a
+            >
+            |
+            <a
+              href="https://play.google.com/store/apps/details?id=za.co.carpsa.procarp"
+              class="project-link"
+              target="_blank"
+              >🤖 Play Store</a
+            ><br />
+            Digital platform for the South African carp angling community with
+            3,000+ fishing venues and live competition tracking.
+            <ul>
+              <li>
+                <strong>Tech Stack:</strong> Flutter, FlutterFlow for rapid
+                development, Firebase backend, Stripe payment integration.
+              </li>
+              <li>
+                <strong>Business Impact:</strong> Architected and implemented
+                premium subscription system with in-app purchases, real-time
+                competition leaderboards, and social features. Transformed
+                solitary fishing activity into community-driven platform,
+                directly contributing to revenue growth and user engagement.
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- EARLIER PROJECTS -->
+      <section>
+        <h3>Earlier Projects & Freelance Work (2014 – 2021)</h3>
+
+        <div class="job-item">
+          <div class="job-header">
+            <span class="job-title">Everything Journal (Original)</span>
+            <span class="job-date">2014</span>
+          </div>
+          <div class="job-description">
+            <em>(Discontinued - Rebuilt as 2025 flagship product)</em><br />
+            My first iOS application and career-launching project. Built as a
+            personal productivity and journaling tool to capture thoughts and
+            organize information across devices. Implemented Core Data for local
+            storage and Apple's iCloud sync API for seamless multi-device
+            synchronization. Released to the App Store in 2014. Project was
+            discontinued when Apple deprecated the original iCloud Core Data
+            sync in favor of CloudKit. This application opened doors to
+            professional opportunities and serves as the foundation for the
+            modern Everything Journal being developed today.
+          </div>
+        </div>
+
+        <div class="job-item">
+          <div class="job-header">
+            <span class="job-title">VibeCheck (Unreleased)</span>
+            <span class="job-date">2021</span>
+          </div>
+          <div class="job-description">
+            <em>(Unreleased - Investor withdrawal)</em><br />
+            Real-time social discovery app for clubs and festivals in the South
+            African market. Successfully architected high-concurrency live
+            update system with geo-fenced social circles using
+            <strong>Flutter</strong> and <strong>GeoFire</strong> before project
+            closure.
+          </div>
+        </div>
+
+        <div class="job-item">
+          <div class="job-header">
+            <span class="job-title">Sabankosh</span>
+            <span class="job-date">2020</span>
+          </div>
+          <div class="job-description">
+            <em>(Company shutdown post-COVID)</em><br />
+            Live theatrical streaming platform developed during COVID-19
+            lockdown. Enabled low-latency broadcasting of live plays to mobile
+            devices using <strong>Agora.io</strong> real-time video SDK and
+            <strong>Flutter</strong>, allowing theaters to maintain audience
+            connections during pandemic closures.
+          </div>
+        </div>
+
+        <div class="job-item">
+          <div class="job-header">
+            <span class="job-title">Sri Sai Spiritual Centre</span>
+            <span class="job-date">2019</span>
+          </div>
+          <div class="job-description">
+            <a href="https://srisaispiritualcentre.org/" class="project-link"
+              >Visit Website</a
+            ><br />
+            Digital platform for the Sri Sai Baba Mandir in Bangalore,
+            established 1954. Developed web and mobile solution enabling
+            devotees to access events, make donations, and receive community
+            updates. Built with <strong>Flutter</strong> for cross-platform
+            accessibility.
+          </div>
+        </div>
+
+        <div class="job-item">
+          <div class="job-header">
+            <span class="job-title">Jyothirvaibhava</span>
+            <span class="job-date">2018 – 2019</span>
+          </div>
+          <div class="job-description">
+            <em>(Shelved due to low traction)</em><br />
+            Astrology consultation platform developed for Astrologer Shreenath
+            Joshi (Bangalore). Built comprehensive iOS and web solution
+            featuring live one-on-one video consultation system using real-time
+            video SDK, e-commerce functionality for astrology products and
+            services, daily horoscope and personalized astrology content
+            delivery, and appointment scheduling system. Integrated payment
+            processing and built scalable backend to handle consultations and
+            user data management.
+          </div>
+        </div>
+
+        <div class="job-item">
+          <div class="job-header">
+            <span class="job-title">Wynd (Imversion Technologies)</span>
+            <span class="job-date">2017</span>
+          </div>
+          <div class="job-description">
+            iOS Developer at Imversion Technologies (Bangalore), working on
+            ride-sharing application for the Spanish market. Developed MVP for
+            Wynd, a mobility startup competing with Uber and Lyft in Spain.
+            Built iOS application with real-time ride matching, GPS tracking,
+            driver-rider communication, and payment integration using Node.js
+            backend. Delivered fully localized solution for Spanish market
+            within 8-week development timeline, incorporating language support,
+            cultural nuances, and regional regulations.
+          </div>
+        </div>
+
+        <div class="job-item">
+          <div class="job-header">
+            <span class="job-title">Piingle</span>
+            <span class="job-date">2016</span>
+          </div>
+          <div class="job-description">
+            <em>(Company shutdown)</em><br />
+            Associate Freelance Developer alongside Sagar Heballe. Contributed
+            to core <strong>iOS (Swift)</strong> development for gamified social
+            discovery platform. Implemented UI transitions and data handling
+            systems.
+          </div>
+        </div>
+
+        <div class="job-item">
+          <div class="job-header">
+            <span class="job-title">DrLive</span>
+            <span class="job-date">2015</span>
+          </div>
+          <div class="job-description">
+            <em>(Company shutdown)</em><br />
+            Lead iOS Developer for early-stage telemedicine platform. Built
+            complete iOS application from ground up, enabling live video
+            consultations between patients and doctors. Solved technical
+            challenges of stabilizing video quality on low-bandwidth
+            connections.
+          </div>
+        </div>
+      </section>
+
+      <!-- TECHNICAL SKILLS -->
+      <section>
+        <h3>Technical Skills</h3>
+        <div class="skills-grid">
+          <div class="skill-category">
+            <strong>AI & Machine Learning</strong>
+            <span
+              >GenKit, Vertex AI, Firebase AI Extensions, OpenAI API, On-Device
+              ML (Core ML, TensorFlow Lite)</span
+            >
+          </div>
+          <div class="skill-category">
+            <strong>Mobile & Frontend</strong>
+            <span
+              >Flutter, Swift, SwiftUI, UIKit, Rive Animations, Spline 3D,
+              Responsive Design</span
+            >
+          </div>
+          <div class="skill-category">
+            <strong>Backend & Cloud</strong>
+            <span
+              >Google Cloud Platform (GCP), Firebase (Auth, Firestore,
+              Functions), Cloud Functions, Node.js, RESTful APIs</span
+            >
+          </div>
+          <div class="skill-category">
+            <strong>Real-Time Communication</strong>
+            <span
+              >Agora.io (Video/Voice), Twilio, WebSockets, Firebase Realtime
+              Database, Pub/Sub</span
+            >
+          </div>
+        </div>
+      </section>
+
+      <!-- EDUCATION & LEARNING -->
+      <section>
+        <h3>Education & Professional Development</h3>
+        <div class="job-item">
+          <div class="job-header">
+            <span class="job-title">University at Buffalo (SUNY)</span>
+            <span class="job-date">2009 – 2012</span>
+          </div>
+          <div class="job-description">
+            Mechanical Engineering (Incomplete) — Transitioned to self-directed
+            software development education
+          </div>
+        </div>
+
+        <div class="job-item">
+          <div class="job-header">
+            <span class="job-title">Self-Directed Technical Education</span>
+            <span class="job-date">2013 – Present</span>
+          </div>
+          <div class="job-description">
+            Independently mastered iOS development, software architecture, cloud
+            technologies, and AI integration through hands-on projects,
+            technical documentation, and continuous learning. Built production
+            applications serving thousands of users across multiple industries.
+          </div>
+        </div>
+      </section>
+
+      <div class="footer-quote">
+        Building scalable solutions that deliver measurable business value.
+      </div>
+    </div>
+
+    <!-- Download PDF Button -->
+    <button class="download-pdf-btn" onclick="window.print()">
+      📄 Download PDF
+    </button>
+
+    <script>
+      // Optional: Add keyboard shortcut for printing
+      document.addEventListener("keydown", function (e) {
+        if ((e.ctrlKey || e.metaKey) && e.key === "p") {
+          e.preventDefault();
+          window.print();
+        }
+      });
+    </script>
+  </body>
+</html>
