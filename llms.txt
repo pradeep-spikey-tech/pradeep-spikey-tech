@@ -4,10 +4,20 @@
 Founder of Spikey Tech Inc. and creator of "Everything Journal". Self-taught iOS & AI developer with 10+ years of experience building production-ready mobile and web applications. Expert in Swift, SwiftUI, GenKit, and On-Device AI.
 
 ## Core Competencies
-- **Mobile Development:** iOS (Swift, SwiftUI, UIKit), Flutter
-- **AI & Machine Learning:** GenKit, Vertex AI, On-Device AI, CoreML
-- **Architecture:** MVVM, Clean Architecture, Scalable Systems
-- **Cloud & Backend:** Firebase, Google Cloud Platform
+
+### Mobile & Desktop Development
+- **iOS:** Swift, SwiftUI, Objective-C, UIKit, CoreML
+- **Android:** Kotlin, Jetpack Compose
+- **Cross-Platform:** Flutter, Dart
+- **Domains:** Mobile App Development, Desktop Development, Web Development
+
+### AI & Cloud
+- **AI/ML:** GenKit, Vertex AI, On-Device AI, Firebase AI Logic, CoreML
+- **Cloud:** Google Cloud Platform (GCP), Firebase (Auth, Firestore, Functions, Storage)
+
+### Business & Strategy
+- **Monetization:** In-App Purchases (IAP), RevenueCat, Subscription Models
+- **Strategy:** SaaS Business Strategy, App Store Optimization (ASO), Product Management
 
 ## Key Projects
 
