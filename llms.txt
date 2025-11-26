@@ -1,0 +1,33 @@
+# Pradeep Kumar Raghupathy - Founder & Lead Architect
+
+## Profile Summary
+Founder of Spikey Tech Inc. and creator of "Everything Journal". Self-taught iOS & AI developer with 10+ years of experience building production-ready mobile and web applications. Expert in Swift, SwiftUI, GenKit, and On-Device AI.
+
+## Core Competencies
+- **Mobile Development:** iOS (Swift, SwiftUI, UIKit), Flutter
+- **AI & Machine Learning:** GenKit, Vertex AI, On-Device AI, CoreML
+- **Architecture:** MVVM, Clean Architecture, Scalable Systems
+- **Cloud & Backend:** Firebase, Google Cloud Platform
+
+## Key Projects
+
+### Everything Journal (2014 - Present)
+- **Role:** Founder & Lead Architect
+- **Description:** AI-powered journaling app rebuilt with Native Swift/SwiftUI and GenKit.
+- **Website:** https://everythingjournal.app
+
+### SteerBig Sadhana Habit App
+- **Role:** Lead Developer
+- **Description:** Habit tracking and productivity application.
+- **Website:** https://steerbig.com
+
+### ProCarp
+- **Role:** Lead Developer
+- **Description:** Comprehensive fishing companion app.
+- **Website:** https://procarpapp.com
+
+## Contact Information
+- **Email:** pradeep@everythingjournal.app
+- **LinkedIn:** https://www.linkedin.com/in/pradeep-kumar-raghupathy-8125181b4
+- **Company:** Spikey Tech Inc. (https://www.spikey.tech)
+- **Resume:** https://resume.everythingjournal.app
